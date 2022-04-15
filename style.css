@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Aladin';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/aladin-v17-latin-regular.woff2') format('woff2'),
+         url('../fonts/aladin-v17-latin-regular.woff') format('woff');
+  }
+
+* {
+    box-sizing: border-box;
+    font-family: 'Aladin', sans-serif;
+    margin: 0;
+    padding: 0;
+}
