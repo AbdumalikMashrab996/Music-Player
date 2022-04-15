@@ -1,16 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music player</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-    
+<body>
+    <div class="container">
+        <!-- ===== Start top section ===== -->
+        <div class="top-section">
+            <button class="about-btn">
+                i
+            </button>
+            <span class="now-playing">Playing Now</span>
+            <button class="gamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- ===== End top section ===== -->
+
+        <!-- ===== Start image section ===== -->
+        <div class="img-container">
+            <button class="mix-btn">
+                <i class="fas fa-arrows-alt"></i>
+            </button>
+            <img class="cover" src="./images/Akan Walker - Faded.jpg" alt="Alan Walker - Faded">
+            <button class="reset-btn">
+                <i class="fas fa-retweet"></i>
+            </button>
+        </div>
+        <!-- ===== End image section ===== -->
+
+        <div class="cover-info">
+            <h3 class="title">Faded</h3>
+            <span class="cover-name">Alan Walker</span>
+        </div>
+
+        <span class="time">
+            00:00
+            <span class="end-time">00:00</span>
+        </span>
+
+        <section class="navigation">
+                <div class="child">
+                </div>
+        </section>
+
+        <section class="buttons">
+            <button class="prev-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button class="play-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="next-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+        </section>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>
