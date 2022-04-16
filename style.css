@@ -59,7 +59,16 @@ body {
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.voice-range {
+    margin-bottom: 10px;
+    display: none;
+}
+
+.hidden {
+    display: block;
 }
 
 .about-btn, .gamburger {
@@ -111,14 +120,32 @@ body {
 }
 
 .cover {
-   width: 240px;
-   height: 240px;
+    animation-name: roundImg;
+    animation-play-state: paused;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
     border-radius: 100%;
     box-shadow: 5px 5px 50px 10px #000;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
+    width: 240px;
+    height: 240px;
+}
+
+@keyframes roundImg {
+    0% {
+        transform: rotate(0deg);
+    } 
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container.play .cover {
+    animation-play-state: running;
 }
 
 .cover-info {
@@ -145,13 +172,14 @@ body {
 }
 
 .navigation {
-    width: 80%;
-    height: 5px;
     background-color: var(--color-white);
     border-radius: 5px;
+    cursor: pointer;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
+    width: 80%;
+    height: 5px;
 }
 
 .child {
