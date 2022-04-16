@@ -63,8 +63,10 @@ body {
 }
 
 .voice-range {
-    margin-bottom: 10px;
+    transform: rotate(270deg);
     display: none;
+    position: absolute;
+    left: -25px;
 }
 
 .hidden {
@@ -101,6 +103,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    position: relative;
 }
 
 .mix-btn, .reset-btn {
@@ -156,6 +159,7 @@ body {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
+    padding: 0 20px;
 }
 
 .cover-name {
@@ -186,7 +190,6 @@ body {
     background-color: tomato;
     border-radius: 5px;
     height: inherit;
-    width: 30%;
 }
 /* ===== End middle section ===== */
 

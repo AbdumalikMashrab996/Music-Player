@@ -8,20 +8,13 @@ const title = document.querySelector('.title')
 const coverName = document.querySelector('.cover-name')
 const time = document.querySelector('.time')
 const endTime = document.querySelector('.end-time')
+const navigation = document.querySelector('.navigation')
 const child = document.querySelector('.child')
 const audio = document.querySelector('.audio')
 const prevBtn = document.querySelector('.prev-btn')
 const playBtn = document.querySelector('.play-btn')
 const nextBtn = document.querySelector('.next-btn')
 const voiceRange = document.querySelector('.voice-range')
-
-voiceRange.addEventListener('input', ()=> {
-    audio.volume = voiceRange.value / 100
-})
-
-mixBtn.addEventListener('click', ()=> {
-    voiceRange.classList.toggle ('hidden')
-})
 
 const songs = [
     'Alan Walker - Faded',
@@ -97,8 +90,27 @@ function prevMusic() {
     audio.play()
 }
 
+function proccess(e) {
+    let currentTime = audio.currenTime
+    const widthProccess = (currentTime / e.target.duration) * 100
+    child.style.width = `${widthProccess}%`
+}
 
-// ========== EVENT'S ==========
+function changeTimeStep(e) {
+    audio.currenTime = (e.offsetX / this.offsetWidth) * audio.duration
+}
+// ======================== EVENT'S ===================================
+voiceRange.addEventListener('input', ()=> {
+    audio.volume = voiceRange.value / 100
+})
+
+mixBtn.addEventListener('click', ()=> {
+    voiceRange.classList.toggle ('hidden')
+})
+
 playBtn.addEventListener('click', playMusic)
 prevBtn.addEventListener('click', prevMusic)
 nextBtn.addEventListener('click', nextMusic)
+audio.addEventListener('click', proccess)
+audio.addEventListener('ended', nextMusic)
+navigation.addEventListener('click', changeTimeStep)
