@@ -190,6 +190,7 @@ body {
     background-color: tomato;
     border-radius: 5px;
     height: inherit;
+    width: 0%;
 }
 /* ===== End middle section ===== */
 
