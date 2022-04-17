@@ -58,14 +58,14 @@ function play() {
     audio.play()
     playBtn.innerHTML = '<i class="fas fa-pause"></i>'
     playBtn.style.backgroundColor = '#49d3d8'
-    container.classList.add ('play')
+    container.classList.add('play')
 }
 
 function pause() {
     audio.pause()
     playBtn.innerHTML = '<i class="fas fa-play"></i>'
     playBtn.style.backgroundColor = 'rgb(29, 30, 36)'
-    container.classList.remove ('play')
+    container.classList.remove('play')
 }
 
 function nextMusic() {
@@ -76,7 +76,7 @@ function nextMusic() {
     }
 
     playSong(songs[currentSong])
-    audio.play()
+    play()
 }
 
 function prevMusic() {
@@ -87,17 +87,19 @@ function prevMusic() {
     }
 
     playSong(songs[currentSong])
-    audio.play()
+    play()
 }
 
 function proccess(e) {
-    let currentTime = audio.currenTime
+    console.log(1)
+    console.log(e.target.duration)
+    let currentTime = audio.currentTime
     const widthProccess = (currentTime / e.target.duration) * 100
     child.style.width = `${widthProccess}%`
 }
 
 function changeTimeStep(e) {
-    audio.currenTime = (e.offsetX / this.offsetWidth) * audio.duration
+    audio.currentTime = (e.offsetX / this.offsetWidth) * audio.duration
 }
 // ======================== EVENT'S ===================================
 voiceRange.addEventListener('input', ()=> {
@@ -111,6 +113,6 @@ mixBtn.addEventListener('click', ()=> {
 playBtn.addEventListener('click', playMusic)
 prevBtn.addEventListener('click', prevMusic)
 nextBtn.addEventListener('click', nextMusic)
-audio.addEventListener('click', proccess)
+audio.addEventListener('timeupdate', proccess)
 audio.addEventListener('ended', nextMusic)
 navigation.addEventListener('click', changeTimeStep)
